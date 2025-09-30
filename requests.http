@@ -1,0 +1,52 @@
+@baseUrl = http://127.0.0.1:8080
+
+# получение объявлений
+GET {{baseUrl}}/adverts
+Content-Type: application/json
+
+###
+
+# создание объявления
+POST {{baseUrl}}/adverts
+Content-Type: application/json
+
+{
+  "title": "Ржавая бензопила",
+  "description": "Только самовывоз",
+  "owner": "Иван"
+}
+
+###
+
+# изменение объявления
+PATCH {{baseUrl}}/adverts
+Content-Type: application/json
+
+{
+  "id": 1,
+  "description": "Совсем новая"
+}
+
+###
+
+# создание объявления
+POST {{baseUrl}}/adverts
+Content-Type: application/json
+
+{
+  "title": "Холодильник Орск",
+  "description": "Только самовывоз",
+  "owner": "Иван"
+}
+
+###
+
+# создание объявления
+DELETE {{baseUrl}}/adverts
+Content-Type: application/json
+
+{
+  "id": 2
+}
+
+###
