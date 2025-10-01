@@ -18,8 +18,43 @@ Content-Type: application/json
 
 ###
 
+# создание объявления
+POST {{baseUrl}}/adverts
+Content-Type: application/json
+
+{
+  "title": "Холодильник Орск",
+  "description": "Дешево",
+  "owner": "Иван"
+}
+
+###
+
+# проверка ошибок в создании объявления
+POST {{baseUrl}}/adverts
+Content-Type: application/json
+
+{
+  "title": "Холодильник Орск",
+  "description": "Только самовывоз"
+}
+
+###
+
+# проверка ошибки Invalid JSON
+POST {{baseUrl}}/adverts
+Content-Type: application/json
+
+###
+
+# получение одного объявления
+GET {{baseUrl}}/adverts/1
+Content-Type: application/json
+
+###
+
 # изменение объявления
-PATCH {{baseUrl}}/adverts
+PATCH {{baseUrl}}/adverts/1
 Content-Type: application/json
 
 {
@@ -29,24 +64,18 @@ Content-Type: application/json
 
 ###
 
-# создание объявления
-POST {{baseUrl}}/adverts
+# проверка ошибки в изменении объявления
+PATCH {{baseUrl}}/adverts/1
 Content-Type: application/json
 
-{
-  "title": "Холодильник Орск",
-  "description": "Только самовывоз",
-  "owner": "Иван"
-}
+# {
+#   "id": 1
+# }
 
 ###
 
-# создание объявления
-DELETE {{baseUrl}}/adverts
+# удаление объявления
+DELETE {{baseUrl}}/adverts/2
 Content-Type: application/json
-
-{
-  "id": 2
-}
 
 ###
